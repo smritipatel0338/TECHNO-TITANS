@@ -10,7 +10,22 @@ import habitRoutes from './routes/habits.js';
 import friendRoutes from './routes/friends.js';
 import simulationRoutes from './routes/simulations.js';
 const app = express();
-app.use(helmet()); app.use(cors({ origin: process.env.CLIENT_ORIGIN?.split(',') || 'http://localhost:5173' }));
+app.use(helmet()); app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (
+        !origin ||
+        origin.startsWith('http://localhost') ||
+        origin.endsWith('.vercel.app') ||
+        origin === process.env.CLIENT_URL
+      ) {
+        return callback(null, true);
+      }
+      return callback(new Error('Not allowed by CORS'));
+    },
+    credentials: true,
+  })
+);
 app.use(express.json({ limit: '100kb' })); app.use(morgan('dev'));
 app.use('/api', rateLimit({ windowMs: 15 * 60 * 1000, limit: 300, standardHeaders: 'draft-7', legacyHeaders: false }));
 app.get('/api/health', (_req,res)=>res.json({ status:'ok', service:'future-you-api' }));
