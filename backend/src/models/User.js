@@ -6,6 +6,8 @@ const userSchema = new mongoose.Schema({
   passwordHash: { type: String, required: true, select: false },
   avatar: { type: String, default: '🌱' },
   friends: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
-  createdAt: { type: Date, default: Date.now }
+  createdAt: { type: Date, default: Date.now },
+  resetOtpHash: { type: String, default: null },
+resetOtpExpiresAt: { type: Date, default: null }
 }, { timestamps: true });
 export default mongoose.model('User', userSchema);
