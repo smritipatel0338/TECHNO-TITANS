@@ -1112,3 +1112,34 @@ input[type="range"]::-moz-range-thumb {
     display: none;
   }
 }
+.app {
+  max-width: 1180px;
+  margin: auto;
+  padding: 14px 12px calc(var(--tab) + 130px + env(safe-area-inset-bottom));
+}
+.tabs {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 40;
+  display: flex;
+  background: var(--card);
+  border-top: 3px solid var(--line);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+@media (min-width: 960px) {
+  .tabs {
+    display: none;
+  }
+  .grid {
+    grid-template-columns: 1.2fr 1fr;
+  }
+  .col:first-child {
+    position: sticky;
+    top: 96px;
+  }
+  .app {
+    padding-bottom: 150px;
+  }
+}
