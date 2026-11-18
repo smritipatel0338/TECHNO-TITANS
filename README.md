@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Future You — AI-powered Digital Twin of Your Habits
 
 A full-stack hackathon application inspired by the uploaded **Future You: Living Tree Twin** prototype. The original's warm paper background, bold comic-style cards, colorful controls, garden/tree metaphor, playful Tulsi mascot and mobile bottom navigation are retained as the visual direction.
@@ -103,4 +103,5 @@ Plan B (Reinvested Routine): Projects the outcome when healthier habits and focu
 🎮 Gamification & Rewards: Daily quests, streak tracking, streak protection shields, XP progression, and Tulsi the Mascot who delivers secret favors and random event survival challenges (e.g., Exam storms, Heatwaves).
 
 🎨 Atmospheric Polish: Dynamic weather/butterfly particle engines, dark/light theme toggling, and retro newspaper-inspired UI aesthetics.
->>>>>>> b2f97291cf350bb8acf2bb64826bc813a401a84a
+
+
